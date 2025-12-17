@@ -1,0 +1,242 @@
+/* =========================
+   VARIABLES & GLOBAL STYLES
+========================= */
+:root {
+  --primary-color: blueviolet;
+  --secondary-color: orange;
+  --border-gradient: linear-gradient(45deg, #6c63ff, #ff6b6b, #4ecdc4);
+  --quote-color: #f8f9fa;
+  --card-hover-transform: translateY(-5px);
+}
+
+body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+  color: #000;
+}
+.nav-link {
+  color: #fff;
+}
+.nav-link:hover {
+  color: #ddd;
+}
+
+/* =========================
+   SECTION HEADERS
+========================= */
+.section-header {
+  position: relative;
+  padding-bottom: 25px;
+  text-align: center;
+  font-weight: 900;
+}
+
+.section-header::after {
+  content: "";
+  position: absolute;
+  width: 200px;
+  height: 4px;
+  background: #000;
+  left: 50%;
+  transform: translateX(-50%);
+  bottom: 0;
+}
+
+.section-header span {
+  display: block;
+  color: var(--secondary-color);
+  font-size: 15px;
+  font-weight: 300;
+}
+
+/* =========================
+   TESTIMONIALS GRID
+========================= */
+.testimonials {
+  display: grid;
+  place-items: center;
+  min-height: 100vh;
+  padding: 0 15px;
+}
+
+.testimonial {
+  max-width: 1000px;
+  margin: 0 auto 80px auto;
+  padding-bottom: 50px;
+}
+
+.single-item,
+.testimonial-card {
+  background: #fff;
+  border-radius: 10px;
+  padding: 30px;
+  margin: 50px 15px;
+  transition: transform 0.3s ease;
+  min-height: 400px;
+}
+
+.single-item:hover,
+.testimonial-card:hover {
+  transform: var(--card-hover-transform);
+}
+
+/* =========================
+   PROFILE & IMAGE
+========================= */
+.profile {
+  text-align: center;
+  margin-bottom: 30px;
+}
+
+.profile-img-container {
+  position: relative;
+  display: inline-block;
+}
+
+.profile-img-container::before {
+  content: "";
+  position: absolute;
+  top: -10px;
+  left: -10px;
+  right: -10px;
+  bottom: -10px;
+  background: var(--border-gradient);
+  border-radius: 50%;
+  z-index: -1;
+  opacity: 0.7;
+}
+
+.profile-img-container img {
+  width: 200px;
+  height: 200px;
+  border-radius: 50%;
+  border: 7px solid rgb(0, 136, 255);
+  object-fit: cover;
+}
+
+/* =========================
+   CONTENT & QUOTES
+========================= */
+.content {
+  font-size: 18px;
+}
+
+.content p {
+  text-align: justify;
+}
+
+.content p span {
+  font-size: 48px;
+  margin-right: 20px;
+  color: var(--primary-color);
+}
+
+.quote-icon {
+  color: var(--quote-color);
+  position: relative;
+  z-index: 1;
+}
+
+.quote-icon i {
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.author-info {
+  border-top: 2px solid #f0f0f0;
+  padding-top: 1rem;
+}
+
+/* =========================
+   SOCIAL LINKS
+========================= */
+.social-links a,
+.socials i {
+  margin-right: 25px;
+  transition: transform 0.2s ease;
+}
+
+.social-links a:hover {
+  transform: translateY(-3px);
+}
+
+/* =========================
+   BIO STYLING
+========================= */
+.bio h4 {
+  font-family: "Courier New", Courier, monospace;
+}
+
+/* =========================
+   CAROUSEL CONTROLS
+========================= */
+.carousel-control-next-icon,
+.carousel-control-prev-icon {
+  background-color: var(--primary-color);
+  border-radius: 50%;
+  border: 2px solid #fff;
+  background-size: 68% 68%;
+  background-position: center;
+}
+
+.carousel-controls {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 1rem;
+}
+.socialism {
+  background-color: #f8f9fa;
+}
+
+.border-bottom {
+  border-color: #dee2e6 !important;
+}
+
+.text-body-secondary {
+  color: #6c757d !important;
+  font-size: 0.9rem;
+}
+
+a.text-body-secondary:hover {
+  color: #0d6efd !important;
+  transition: color 0.3s ease;
+}
+
+/* =========================
+   RESPONSIVE
+========================= */
+@media (max-width: 768px) {
+  .testimonial-card,
+  .single-item {
+    padding: 2rem 1.5rem !important;
+    min-height: auto;
+  }
+
+  .profile-img-container::before {
+    display: none;
+  }
+
+  .carousel-controls {
+    margin-top: 2rem;
+  }
+  .text-body-secondary {
+    font-size: 0.85rem;
+  }
+
+  footer {
+    padding-left: 1rem !important;
+    padding-right: 1rem !important;
+  }
+}
+
+@media (max-width: 576px) {
+  .content p {
+    font-size: 1rem !important;
+  }
+
+  .profile-img-container img {
+    width: 140px !important;
+    height: 140px !important;
+  }
+}
